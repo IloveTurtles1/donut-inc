@@ -3,6 +3,57 @@
 <head>
 <style>
 
+.pic-ctn {
+  width: 100vw;
+  height: 200px;
+}
+
+@keyframes display {
+  0% {
+    transform: translateX(100%);
+    opacity: 1;
+  }
+  50% {
+      transform: translateX(0);
+      opacity: 1;
+  }
+  100% {
+    transform: translateX(-100%);
+    opacity: 1;
+  }
+}
+
+.pic-ctn {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+}
+
+.pic-ctn > img {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  animation: display 8s infinite;
+}
+
+img {
+    width: 100%
+}
+
+img:nth-child(2) {
+  animation-delay: 4s;
+}
+
+/*img:nth-child(3) {
+  animation-delay: 4s;
+}
+img:nth-child(4) {
+  animation-delay: 6s;
+}
+img:nth-child(5) {
+  animation-delay: 8s;
+}*/
+
     body {
         background: cyan;
         display: flex;
@@ -41,6 +92,10 @@
         justify-content: center;
     }
     
+    
+    
+    
+    
 </style>
 </head>
 <body>
@@ -58,9 +113,9 @@
         </ul>
     </nav>
     <main>
-        <div class="photoWheel">
-            <img class="img1" src="https://donut.fhub.us/birb.jpeg">
-            <img class="img2" src="https://donut.fhub.us/public.jpeg">
+        <div class="pic-ctn">
+            <img class="pic" src="https://donut.fhub.us/birb.jpeg">
+            <img class="pic" src="https://donut.fhub.us/public.jpeg">
         </div>
     </main>
 </body>
