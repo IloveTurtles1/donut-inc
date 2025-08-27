@@ -1,69 +1,21 @@
 <!DOCTYPE html>
 <html>
 <head>
+    <body oncontextmenu="return false;">
+    <title>Donut Inc.</title>
 <style>
 
-.pic-ctn {
-  width: 100vw;
-  height: 200px;
+body {
+    margin: 0;
+    background: #a4a98040;
+    font-family: Marker Felt, Fantasy;
 }
-
-@keyframes display {
-  0% {
-    transform: translateX(100%);
-    opacity: 1;
-  }
-  50% {
-      transform: translateX(0);
-      opacity: 1;
-  }
-  100% {
-    transform: translateX(-100%);
-    opacity: 1;
-  }
-}
-
-.pic-ctn {
-  position: relative;
-  height: 500px;
-  overflow: hidden;
-}
-
-.pic-ctn > img {
-  position: absolute;
-  top: 0;
-  opacity: 0;
-  animation: display 8s infinite;
-}
-
-img {
-    width: 100%
-}
-
-img:nth-child(2) {
-  animation-delay: 4s;
-}
-
-/*img:nth-child(3) {
-  animation-delay: 4s;
-}
-img:nth-child(4) {
-  animation-delay: 6s;
-}
-img:nth-child(5) {
-  animation-delay: 8s;
-}*/
-
-    body {
-        background: cyan;
-        display: flex;
-        margin: auto;
-        flex-wrap: wrap;
-    }
     
     hr {
         width: 100%;
         margin: 0;
+        height: 1px;
+        background: black;
     }
 
     header,
@@ -72,30 +24,113 @@ img:nth-child(5) {
         background: grey;
         width: 100%;
         justify-content: center;
+        margin: 0px;
     }
     
-    nav a {
-        text-decoration: none;
-        color: black;
-    }
-    
-    nav ul li {
-        width: 100%;
+    header {
+        flex-direction: column;
         text-align: center;
-        height: 100%;
+    }
+    
+    h1 {
+        margin-bottom: 5px;
+    }
+    
+    nav {
+        height: 50px;
     }
     
     nav ul {
         list-style: none;
-        display: inherit;
+        display: flex;
         width: 75%;
-        justify-content: center;
+        margin: 0;
     }
     
+    nav a {
+        align-content: center;
+        text-decoration: none;
+        color: black;
+        width: 100%;
+        justify-content: center;
+        height: 100%;
+        margin: 0;
+    }
     
+    nav ul li {
+        display: flex;
+        justify-content: center;
+        transition-duration: 0.3s;
+        width: 75%;
+        margin-bottom: 0;
+    }
     
-    
-    
+    nav a:hover {
+        transform: translatex(5px);
+        animation: navHover 0.2s both;
+    }
+
+@keyframes display {
+  /* Each image has 5s of the 25s cycle = 20% of the timeline */
+
+  /* Slide in: first 4% of full cycle (≈1s) */
+  0%   { transform: translateX(100%); opacity: 1; }
+  4%   { transform: translateX(0);    opacity: 1; }
+
+  /* Hold: next 12% of full cycle (≈3s) */
+  20%  { transform: translateX(0);    opacity: 1; }
+
+  /* Slide out: next 4% of full cycle (≈1s) */
+  24%  { transform: translateX(-100%); opacity: 1; }
+
+  /* Stay hidden until the cycle repeats */
+  100% { transform: translateX(-100%); opacity: 0; }
+}
+
+
+
+
+
+@keyframes navHover {
+    0% {
+        border-left: 0px solid black;
+    }
+    100% {
+        border-left: 2.5px solid black;
+    }
+}
+
+.pic-ctn {
+  position: relative;
+  height: 500px;
+  overflow: hidden;
+
+}
+
+.pic-ctn > img {
+  position: absolute;
+  top: 0;
+  opacity: 0;
+  animation: display 25s infinite;
+  width: 100%;
+}
+
+
+
+img:nth-child(2) {
+  animation-delay: 5s;
+}
+
+img:nth-child(3) {
+  animation-delay: 10s;
+}
+img:nth-child(4) {
+  animation-delay: 15s;
+}
+img:nth-child(5) {
+  animation-delay: 20s;
+}
+
 </style>
 </head>
 <body>
@@ -103,19 +138,25 @@ img:nth-child(5) {
     <h1>
     Donut Inc.
     </h1>
+    <h2>
+        Pictures and More!
+    </h2>
 </header>
 <hr>
     <nav>
     <ul>
-        <li><a href="donut.fhub.us">Home</a></li>
-        <li><a href="/about">About</a></li>
-        <li><a href="/misc">Misc</a></li>
+        <a href="donut.fhub.us"><li>Home</li></a>
+        <a href="/about"><li>About</li></a>
+        <a href="/misc"><li>Misc</li></a>
         </ul>
     </nav>
     <main>
         <div class="pic-ctn">
             <img class="pic" src="https://donut.fhub.us/birb.jpeg">
             <img class="pic" src="https://donut.fhub.us/public.jpeg">
+            <img class="pic" src="https://donut.fhub.us/1.jpeg">
+            <img class="pic" src="https://donut.fhub.us/9.jpeg">
+            <img class="pic" src="https://donut.fhub.us/3.jpeg">
         </div>
     </main>
 </body>
