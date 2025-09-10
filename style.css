@@ -81,7 +81,7 @@ body {
         animation: navHover 0.05s both;
     }
 
-/*@keyframes display {
+@keyframes display {
   /* Each image has 5s of the 25s cycle = 20% of the timeline */
 
   /* Slide in: first 4% of full cycle (≈1s) */
