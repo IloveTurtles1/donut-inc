@@ -6,8 +6,7 @@ html,
     }
 
 body {
-    background: cyan;
-    /*background: #a4a98040;*/
+    background: #a4a98040;
     font-family: Marker Felt, Fantasy;
     scrollbar-width: none;
     min-height: 100vh;
@@ -77,12 +76,12 @@ body {
         margin-bottom: 0;
     }
     
-    nav a:hover {
+     nav a:hover {
         transform: translatex(5px);
-        animation: navHover 0.2s both;
+        animation: navHover 0.05s both;
     }
 
-@keyframes display {
+/*@keyframes display {
   /* Each image has 5s of the 25s cycle = 20% of the timeline */
 
   /* Slide in: first 4% of full cycle (≈1s) */
@@ -149,6 +148,6 @@ img:nth-child(5) {
     #footer {
         width: 100%;
         height: 100px;
-        background: red;
         margin: none;
+        background: lightsteelblue;
     }
