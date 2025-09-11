@@ -39,6 +39,7 @@ header {
   border-radius: 10px;
   margin-top: calc(2% - 5px);
   box-shadow: 0 0 20px;
+  animation: fadeIn 1s ease-out forwards;
 }
 
 h1 {
@@ -66,7 +67,7 @@ nav ul li {
 }
 
 nav a {
-  display: flex; /* ensures align-content works */
+  display: flex; 
   align-items: center;
   justify-content: center;
   text-decoration: none;
@@ -78,6 +79,17 @@ nav a {
 nav a:hover {
   transform: translateX(5px);
   animation: navHover 0.05s both;
+}
+        
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(-10px); /* optional: slight slide down */
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
 }
 
 @keyframes display {
@@ -95,7 +107,7 @@ nav a:hover {
 
 .pic-ctn {
   --count: 5;              /* total images */
-  --duration: 70s;         /* full cycle time */
+  --duration: 70s;         /* cycle time */
   --delay: calc(var(--duration) / var(--count));
     
   position: relative;
@@ -135,4 +147,13 @@ nav a:hover {
     justify-content: space-around;
     height: 100%;
     margin: .5% 5vh .5% 5vh;
+}
+        
+footer div a {
+    color: black;
+    text-decoration: none;
+}
+        
+footer div a:hover {
+    color: grey;
 }
